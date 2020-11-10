@@ -1,0 +1,254 @@
+{
+  "id": "2186903",
+  "name": "zxy",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "551965",
+      "name": "箭头",
+      "font_class": "arrow-right-copy-copy",
+      "unicode": "e608",
+      "unicode_decimal": 58888
+    },
+    {
+      "icon_id": "810220",
+      "name": "箭头",
+      "font_class": "jiantou-copy",
+      "unicode": "e667",
+      "unicode_decimal": 58983
+    },
+    {
+      "icon_id": "810221",
+      "name": "箭头",
+      "font_class": "jiantou-copy-copy",
+      "unicode": "e668",
+      "unicode_decimal": 58984
+    },
+    {
+      "icon_id": "2674878",
+      "name": "箭头 上",
+      "font_class": "jiantoushang",
+      "unicode": "e62c",
+      "unicode_decimal": 58924
+    },
+    {
+      "icon_id": "2674927",
+      "name": "箭头 上",
+      "font_class": "jiantoushang1",
+      "unicode": "e62d",
+      "unicode_decimal": 58925
+    },
+    {
+      "icon_id": "5131",
+      "name": "家具建材",
+      "font_class": "jiajujiancai",
+      "unicode": "e601",
+      "unicode_decimal": 58881
+    },
+    {
+      "icon_id": "5134",
+      "name": "母婴玩具",
+      "font_class": "muyingwanju",
+      "unicode": "e602",
+      "unicode_decimal": 58882
+    },
+    {
+      "icon_id": "5137",
+      "name": "女装内衣",
+      "font_class": "nvzhuangneiyi",
+      "unicode": "e603",
+      "unicode_decimal": 58883
+    },
+    {
+      "icon_id": "5147",
+      "name": "图书音像",
+      "font_class": "tushuyinxiang",
+      "unicode": "e604",
+      "unicode_decimal": 58884
+    },
+    {
+      "icon_id": "6271",
+      "name": "鞋",
+      "font_class": "xie",
+      "unicode": "e605",
+      "unicode_decimal": 58885
+    },
+    {
+      "icon_id": "736234",
+      "name": "全球化1",
+      "font_class": "icon35",
+      "unicode": "e639",
+      "unicode_decimal": 58937
+    },
+    {
+      "icon_id": "791860",
+      "name": "手机",
+      "font_class": "ai-phone",
+      "unicode": "e63c",
+      "unicode_decimal": 58940
+    },
+    {
+      "icon_id": "852325",
+      "name": "钻石",
+      "font_class": "zuanshi",
+      "unicode": "e675",
+      "unicode_decimal": 58997
+    },
+    {
+      "icon_id": "947088",
+      "name": "美妆",
+      "font_class": "meizhuang",
+      "unicode": "e661",
+      "unicode_decimal": 58977
+    },
+    {
+      "icon_id": "1315581",
+      "name": "便利店",
+      "font_class": "bianlidian",
+      "unicode": "e606",
+      "unicode_decimal": 58886
+    },
+    {
+      "icon_id": "2044423",
+      "name": "冰箱 (2)",
+      "font_class": "bingxiang",
+      "unicode": "e64c",
+      "unicode_decimal": 58956
+    },
+    {
+      "icon_id": "5112072",
+      "name": "樱桃",
+      "font_class": "yingtao",
+      "unicode": "e607",
+      "unicode_decimal": 58887
+    },
+    {
+      "icon_id": "5193916",
+      "name": "厨具",
+      "font_class": "chuju",
+      "unicode": "e61e",
+      "unicode_decimal": 58910
+    },
+    {
+      "icon_id": "5735750",
+      "name": "家具-17",
+      "font_class": "jiaju-",
+      "unicode": "e825",
+      "unicode_decimal": 59429
+    },
+    {
+      "icon_id": "9025011",
+      "name": "面",
+      "font_class": "mian",
+      "unicode": "e617",
+      "unicode_decimal": 58903
+    },
+    {
+      "icon_id": "13483318",
+      "name": "衣服类型维护",
+      "font_class": "yifuleixingweihu",
+      "unicode": "e65a",
+      "unicode_decimal": 58970
+    },
+    {
+      "icon_id": "15838829",
+      "name": "医药箱",
+      "font_class": "yiyaoxiang",
+      "unicode": "e7a3",
+      "unicode_decimal": 59299
+    },
+    {
+      "icon_id": "17755679",
+      "name": "车型",
+      "font_class": "chexing",
+      "unicode": "e60a",
+      "unicode_decimal": 58890
+    },
+    {
+      "icon_id": "14975809",
+      "name": "天猫",
+      "font_class": "tianmao1",
+      "unicode": "e629",
+      "unicode_decimal": 58921
+    },
+    {
+      "icon_id": "954427",
+      "name": "手机",
+      "font_class": "shouji",
+      "unicode": "e72f",
+      "unicode_decimal": 59183
+    },
+    {
+      "icon_id": "1638196",
+      "name": "列表",
+      "font_class": "liebiao",
+      "unicode": "e60b",
+      "unicode_decimal": 58891
+    },
+    {
+      "icon_id": "3834478",
+      "name": "手机",
+      "font_class": "shouji1",
+      "unicode": "e61b",
+      "unicode_decimal": 58907
+    },
+    {
+      "icon_id": "7775068",
+      "name": "列表",
+      "font_class": "liebiao1",
+      "unicode": "e645",
+      "unicode_decimal": 58949
+    },
+    {
+      "icon_id": "11177627",
+      "name": "购物车",
+      "font_class": "ziyuan",
+      "unicode": "e60e",
+      "unicode_decimal": 58894
+    },
+    {
+      "icon_id": "13310600",
+      "name": "列表",
+      "font_class": "liebiao-",
+      "unicode": "e626",
+      "unicode_decimal": 58918
+    },
+    {
+      "icon_id": "56991",
+      "name": "天猫-极速退款",
+      "font_class": "tianmaojisutuikuan",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "688115",
+      "name": "天猫 T",
+      "font_class": "tianmaot",
+      "unicode": "e799",
+      "unicode_decimal": 59289
+    },
+    {
+      "icon_id": "925495",
+      "name": "天猫购物车 ",
+      "font_class": "tianmaogouwuche",
+      "unicode": "e655",
+      "unicode_decimal": 58965
+    },
+    {
+      "icon_id": "15055336",
+      "name": "天猫",
+      "font_class": "tianmao",
+      "unicode": "e676",
+      "unicode_decimal": 58998
+    },
+    {
+      "icon_id": "15726928",
+      "name": "天猫超市-购物车",
+      "font_class": "tianmaochaoshi-gouwuche",
+      "unicode": "e640",
+      "unicode_decimal": 58944
+    }
+  ]
+}
