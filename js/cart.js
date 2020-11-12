@@ -54,7 +54,7 @@ function loadList() {
             $.each(pot, function(i, v) {
                 html += `
                         <li>
-                        <input type="checkbox" name="" class="dan-sel">
+                        <input type="checkbox" name="" class="dan-sel"  del-pid="${v.pid}">
                             <img src="${v.pimg}" alt="">
                             <p class="pr">￥${v.pprice}</p>
                             <P>￥${v.pprice*v.pnum}</p>
@@ -127,7 +127,10 @@ function updateData() {
                 console.log(res);
 
             }
+
+
         })
+        countPrice()
 
     })
 
@@ -155,7 +158,7 @@ function updateData() {
 
             }
         })
-
+        countPrice()
     })
 
     //-按钮-------------
@@ -185,7 +188,7 @@ function updateData() {
 
             }
         })
-
+        countPrice()
 
     })
 
@@ -199,29 +202,43 @@ function updateData() {
 //     let allsel = document.querySelector("#all-sel")
 //     let dansels = document.querySelectorAll(".dan-sel")
 //     allsel.onchange = function() {
+//         // console.log(allsel.checked);
+//         // if (allsel.checked) {
+//         //     dansels.forEach((v) => (v.checked = allsel.checked));
+//         // } else {
+//         //     dansels.forEach((v) => (v.checked = false));
+
+//         // }
 //         console.log(allsel.checked);
-//         if (allsel.checked) {
-//             dansels.forEach((v) => (v.checked = allsel.checked));
-//         } else {
-//             dansels.forEach((v) => (v.checked = false));
+//         dansels.forEach((v) => (v.checked = allsel.checked));
 
-//         }
+//         console.log(pot);
+//         pot.forEach((v) => (v.checked = allsel.checked));
+//         console.log(pot);
 //     }
+//     var allFlag = false
 //     dansels.forEach((dansel) => {
-//         allsel.onchange = function() {
+//         dansel.onchange = function() {
+//             let pid = dansel.getAttribute('del-pid')
 
+//             console.log(pid);
+//             let pobj = pot.find(v => v.pid == pid);
+//             pobj.checked = allsel.checked;
+//             // countPrice()
+//             var allFlag = pot.every(v => v.checked == true)
+//             console.log(allFlag);
+//             allsel.checked = allFlag
+//             console.log(allFlag);
 //         }
-//     });
-
-
+//     })
+//     allsel.checked = allFlag
 
 
 // }
 
-
 function selFn() {
     let allsel = document.querySelector('#all-sel');
-    let dansels = document.querySelectorAll('.dan-sel');
+    let dansels = document.querySelectorAll('#dan-sel');
     allsel.onchange = function() {
         console.log(allsel.checked);
         dansels.forEach((v) => (v.checked = allsel.checked));
@@ -234,7 +251,7 @@ function selFn() {
 
     };
 
-    var allFlag
+
     dansels.forEach((dansel) => {
         dansel.onchange = function() {
             let pid = dansel.getAttribute('del-pid')
@@ -242,10 +259,10 @@ function selFn() {
             let pobj = pot.find(v => v.pid == pid);
             pobj.checked = dansel.checked;
 
-            // countPrice()
+            countPrice()
 
 
-            allFlag = pot.every(v => v.checked == true)
+            var allFlag = pot.every(v => v.checked == true)
             allsel.checked = allFlag
         }
     })
@@ -257,8 +274,36 @@ function selFn() {
 
 
 //计算总价------------
-function countPrice() {
+// function countPrice() {
+//     // console.log(pot);
+//     // let a = pro.data
+//     // let n
+//     // $.each(a, function(i, v) {
+//     //     n += parseInt(v.pnum)
+//     // })
+//     // $("#count-num").html("数量：" + n)
 
+// }
+function countPrice() {
+    let countNum = 0;
+    pot.forEach((v) => {
+        if (v.checked == true) {
+            countNum += parseInt(v.pnum);
+        }
+    });
+    console.log(countNum);
+    let cn = document.querySelector('#count-num');
+    cn.innerHTML = countNum;
+
+    let countPrice = 0;
+    pot.forEach((v) => {
+        if (v.checked == true) {
+            countPrice += parseInt(v.pnum) * v.pprice;
+        }
+    });
+    console.log(countPrice);
+    let cp = document.querySelector('#count-price')
+    cp.innerHTML = "￥" + countPrice;
 
 
 }

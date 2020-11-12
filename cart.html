@@ -280,7 +280,378 @@
     </div>
 
     <script src="js/jquery1.11.js"></script>
-    <script src="js/cart.js"></script>
+    <!-- <script src="js/cart.js"></script> -->
+
+
+
+
+    <!-- ------------------------------ -->
+
+    <script src="../js/axios.min.js"></script>
+
+
+    <script>
+        let id = localStorage.getItem('uid');
+        let token = localStorage.getItem('token');
+        let pnum = localStorage.getItem('pnum')
+        console.log(id);
+        console.log(token);
+
+        var pot;
+
+        loadList()
+            // addList()
+            // deleteProduct()
+        async function loadList() {
+            try {
+                let cartlistAPI = 'http://jx.xuzhixiang.top/ap/api/cart-list.php'
+                let res = await axios.get(cartlistAPI, {
+                    params: {
+                        id
+                    }
+                })
+                console.log(res);
+                pot = res.data.data;
+
+
+                if (pot.length == 0) {
+                    $('.buy').css('display', 'none')
+                    $('.nulltu').css('display', 'block')
+                    $('.list').css('display', 'none')
+                } else {
+                    $('.nulltu').css('display', 'none')
+                    $('.buy').css('display', 'block')
+                    $('.list').css('display', 'block')
+                }
+                let html = '';
+                pot.forEach(e => {
+                    html += `
+                    <li class="li">
+                        <input type="checkbox" name="" id="dan-sel" del-pid="${e.pid}">
+                        </br>
+                        <img src="${e.pimg}" alt="">
+                            <p class="pr">￥${e.pprice}</p>
+                            <P>￥${e.pprice*e.pnum}</p>
+                        <div>
+                            <input type="button" value="+"id="input1" del-pid="${e.pid}">
+                            <input type="text" value="${e.pnum}" id="input2" del-pid="${e.pid}">
+                            <input type="button" value="-"id="input3"del-pid="${e.pid}">
+                        </div>
+                        <button class="button" del-pid="${e.pid}">删除</button>
+                    </li>    
+                    `
+                });
+                // console.log(html);
+                let list = document.querySelector('.list')
+                list.innerHTML = html;
+
+
+
+
+
+                deleteCart()
+
+
+                updateCart()
+                selFn()
+                cc()
+
+
+
+
+
+
+            } catch (error) {
+
+            }
+        }
+
+
+
+
+
+
+
+
+
+        function deleteCart() {
+            var lis = document.querySelectorAll('.li')
+            for (let i = 0; i < lis.length; i++) {
+                lis[i].onclick = async function(evt) {
+                    if (evt.target.classList.contains('button')) {
+                        console.log('删除了');
+                        evt.target.parentNode.remove()
+
+                        let delAPI = 'http://jx.xuzhixiang.top/ap/api/cart-delete.php'
+                        let pid = evt.target.getAttribute('del-pid')
+                        let params = {
+                            uid: id,
+                            pid
+                        }
+                        console.log(params);
+                        try {
+                            let res = await axios.get(delAPI, {
+                                params
+                            })
+
+                            console.log('123');
+                            fff()
+
+
+                            async function fff() {
+                                try {
+                                    let cartlistAPI = 'http://jx.xuzhixiang.top/ap/api/cart-list.php'
+                                    let res = await axios.get(cartlistAPI, {
+                                        params: {
+                                            id
+                                        }
+                                    })
+                                    console.log(res);
+                                    pot = res.data.data;
+                                    cc()
+                                    if (pot.length == 0) {
+                                        $('.nulltu').css('display', 'block')
+                                        $('.list').css('display', 'none')
+                                        $('.buy').css('display', 'none')
+                                    } else {
+                                        $('.nulltu').css('display', 'none')
+                                        $('.list').css('display', 'block')
+                                        $('.buy').css('display', 'block')
+                                    }
+
+                                } catch (error) {
+
+                                }
+                            }
+
+
+
+
+
+                        } catch (error) {
+
+                        }
+
+                    }
+
+                }
+            }
+
+            cc()
+
+
+        }
+
+
+        function updateCart() {
+            let input2 = document.querySelectorAll('#input2')
+            let inputadds = document.querySelectorAll('#input1')
+            let inputsubs = document.querySelectorAll('#input3')
+            inputadds.forEach((inputadd) => {
+
+                // console.log(inputadd);
+                inputadd.onclick = async function() {
+                    // console.log(inputadd);
+                    console.log(inputadd.nextElementSibling.value);
+                    let num = parseInt(inputadd.nextElementSibling.value) + 1;
+                    console.log(num);
+                    let pid = inputadd.getAttribute('del-pid')
+                    console.log(pid);
+                    console.log(pot);
+                    let pobj = pot.find((v) => v.pid == pid);
+                    console.log(pobj);
+                    let num2 = parseInt(pobj.pnum) + 1;
+
+                    let url1 = 'http://jx.xuzhixiang.top/ap/api/cart-update-num.php'
+                    let params = {
+                        uid: id,
+                        pid,
+                        pnum: num2
+                    }
+                    try {
+                        let res = await axios.get(url1, {
+                            params
+                        })
+                        inputadd.nextElementSibling.value = num2;
+                        pobj.pnum = num2;
+                    } catch (error) {
+
+                    }
+                    console.log(num2);
+                    countPrice()
+                    cc()
+                }
+
+            })
+
+
+
+            inputsubs.forEach((inputsub) => {
+
+                // console.log(inputadd);
+                inputsub.onclick = async function() {
+                    // console.log(inputadd);
+                    console.log(inputsub.previousElementSibling.value);
+                    let num = parseInt(inputsub.previousElementSibling.value) - 1;
+                    console.log(num);
+                    let pid = inputsub.getAttribute('del-pid')
+                    console.log(pid);
+                    console.log(pot);
+                    let pobj = pot.find((v) => v.pid == pid);
+                    console.log(pobj);
+                    let num2 = parseInt(pobj.pnum) - 1;
+                    if (num2 == 0) {
+                        return;
+                    }
+                    let url1 = 'http://jx.xuzhixiang.top/ap/api/cart-update-num.php'
+                    let params = {
+                        uid: id,
+                        pid,
+                        pnum: num2
+                    }
+                    try {
+                        let res = await axios.get(url1, {
+                            params
+                        })
+                        inputsub.previousElementSibling.value = num2;
+                        pobj.pnum = num2;
+
+                    } catch (error) {
+
+                    }
+                    countPrice()
+                    cc()
+                }
+
+            })
+
+
+
+        }
+
+        function selFn() {
+
+            let allsel = document.querySelector('#all-sel');
+            let dansels = document.querySelectorAll('#dan-sel');
+            allsel.checked = false
+            allsel.onchange = function() {
+                console.log(allsel.checked);
+                dansels.forEach((v) => (v.checked = allsel.checked));
+
+                console.log(pot);
+                pot.forEach((v) => (v.checked = allsel.checked));
+                console.log(pot);
+
+                countPrice()
+
+            };
+
+
+            dansels.forEach((dansel) => {
+                dansel.onchange = function() {
+                    let pid = dansel.getAttribute('del-pid')
+                    console.log(pid);
+                    let pobj = pot.find(v => v.pid == pid);
+                    pobj.checked = dansel.checked;
+
+                    countPrice()
+
+
+                    var allFlag = pot.every(v => v.checked == true)
+                    allsel.checked = allFlag
+                }
+            })
+            allsel.checked = allFlag
+        }
+
+
+
+
+
+        function countPrice() {
+            let countNum = 0;
+            pot.forEach((v) => {
+                if (v.checked == true) {
+                    countNum += parseInt(v.pnum);
+                }
+            });
+            console.log(countNum);
+            let cn = document.querySelector('#count-num');
+            cn.innerHTML = countNum;
+
+            let countPrice = 0;
+            pot.forEach((v) => {
+                if (v.checked == true) {
+                    countPrice += parseInt(v.pnum) * v.pprice;
+                }
+            });
+            console.log(countPrice);
+            let cp = document.querySelector('#count-price')
+            cp.innerHTML = "￥" + countPrice;
+
+
+        }
+
+
+
+
+        function cc() {
+            let pnumm = 0
+            console.log(pot);
+            console.log(pot.length);
+
+            $.each(pot, function(i, v) {
+                console.log(pot);
+                pnumm += parseInt(v.pnum)
+            })
+            if (username1) {
+                $('.zz').html(pnumm)
+            } else {
+                $('.zz').html(0)
+            }
+        }
+    </script>
+
+
+    <!-- nav购物车跳转 -->
+    <script>
+        let username1 = localStorage.getItem('username')
+    </script>
+    <script>
+        $('.li5').click(function() {
+            if (username1) {
+                location.href = '../html/mycart.html'
+            } else {
+                alert('请登录账号')
+                location.href = 'log.html'
+            }
+        })
+    </script>
+    <!-- 退出 -->
+    <script>
+        $('.deng').click(function() {
+            if (username1) {
+                confirm('确认退出？')
+                    // alert('确认退出？')
+                localStorage.removeItem('username')
+                location.href = '../html/011.html'
+            } else {
+                alert('请登录')
+                location.href = '../html/log.html'
+                    // $('.deng a').innerHeight = '请登录'
+            }
+        })
+
+        $('.zhu').click(function() {
+            if (username1) {
+                alert('请先退出账号')
+            } else {
+                alert('请注册账号')
+                location.href = '../html/reg.html'
+                    // $('.deng a').innerHeight = '请登录'
+            }
+        })
+    </script>
 </body>
 
 </html>

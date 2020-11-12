@@ -23,8 +23,13 @@ $('#sub').click(function() {
             password
         },
         success: res => {
-            alert("注册成功")
-            location.href = "log.html"
+            if (res == 1) {
+                alert("注册成功")
+                location.href = "log.html"
+            } else {
+                alert("注册失败，用户名已存在")
+            }
+
         }
     })
 })
