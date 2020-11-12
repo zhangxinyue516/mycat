@@ -5,10 +5,282 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>购物车</title>
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="shortcut icon" href="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2137464088,2009884375&fm=26&gp=0.jpg">
+    <link rel="stylesheet" href="font/font_2186903_wbrix7s3pp8/iconfont.css">
+
+    <link rel="stylesheet" href="css/ind.css">
+    <link rel="stylesheet" href="css/cart.css">
 </head>
 
 <body>
+    <!-- -------nav------- -->
+    <div class="nav-warp">
+        <div class="nav">
+            <ul class="left">
+                <li>喵，欢迎来天猫</li>
+                <a class="navlog" href="log.html">
+                    <li>请登录</li>
+                </a>
+                <a href="reg.html">
+                    <li>免费注册</li>
+                </a>
+            </ul>
+            <ul class="right">
+                <li class="li1">
+                    <div>
+                        <a href="">我的淘宝</a>
+                        <b></b>
+                    </div>
+                    <ol>
+                        <a href="//trade.taobao.com/trade/itemlist/list_bought_items.htm?t=20110530">已买到的宝贝</a>
+                        <a href="//trade.taobao.com/trade/itemlist/list_sold_items.htm?t=20110530">已卖出的宝贝</a>
+                    </ol>
+                </li>
+                <li>
+                    <span class="iconfont">&#xe60e;</span>
+                    <a class="navcart" href="">购物车</a>
+                </li>
+                <li class="li2">
+                    <div>
+                        <a href="">收藏夹</a>
+                        <b></b>
+                    </div>
 
+                    <ol>
+                        <a href="">收藏的宝贝</a>
+                        <a href="">收藏的店铺</a>
+                    </ol>
+                </li>
+                <i>
+                    |
+                </i>
+                <li class="li3">
+                    <div>
+                        <span class="iconfont">&#xe72f;</span>
+                        <a href="">手机版</a>
+                        <b></b>
+                    </div>
+                    <ol><img src="img/erweima.png" alt=""></ol>
+
+                </li>
+                <li>
+                    <a href="">淘宝网</a>
+                </li>
+                <li class="li4">
+                    <div>
+                        <a href="">商家支持</a>
+                        <b></b>
+                    </div>
+                    <div class="divol">
+                        <p>商家：</p>
+                        <ol>
+
+                            <a>商家中心</a>
+                            <a>天猫规则</a>
+                            <a>商家入驻</a>
+                            <a>运营服务</a>
+                            <a>商家品控</a>
+                            <a>商家工具</a>
+                            <a>天猫智库</a>
+                            <a>喵言喵语</a>
+                        </ol>
+                        <p>帮助：</p>
+                        <ol>
+
+                            <li>帮助中心</li>
+                            <li>问商友</li>
+                        </ol>
+                    </div>
+
+                </li>
+                <li class="li5">
+                    <div>
+                        <span class="iconfont">&#xe645;</span>
+                        <a href="">网站导航</a>
+                        <b></b>
+                    </div>
+                    <div class="li5ol">
+                        <ol style="color: orangered;">
+                            <p>热点推荐Hot</p>
+                            <a href="">天猫超市</a>
+                            <a href="">哺鲜生</a>
+                            <a href="">科技新品</a>
+                            <a href="">女装新</a>
+                            <a href="">酷玩街</a>
+                            <a href="">内衣新品</a>
+                            <a href="">试美妆</a>
+                            <a href="">运动新品</a>
+                            <a href="">时尚先生</a>
+                            <a href="">精明妈咪</a>
+                            <a href="">吃乐会</a>
+                            <a href="">企业采购</a>
+                            <a href="">会员积分</a>
+                            <a href="">天猫国际</a>
+                            <a href="">品质频道</a>
+                        </ol>
+                        <ol style="color: blue;">
+                            <p>行业市场Market</p>
+                            <a href="">美妆</a>
+                            <a href="">电器</a>
+                            <a href="">女装</a>
+                            <a href="">男装</a>
+                            <a href="">女鞋</a>
+                            <a href="">男鞋</a>
+                            <a href="">中内衣</a>
+                            <a href="">箱包</a>
+                            <a href="">运动</a>
+                            <a href="">母婴</a>
+                            <a href="">家装</a>
+                            <a href="">医药</a>
+                            <a href="">食品</a>
+                            <a href="">配饰</a>
+                            <a href="">汽车</a>
+                        </ol>
+                        <ol>
+                            <p>服务指南Help</p>
+                            <a href="">帮助中心</a>
+                            <a href="">品质保障</a>
+                            <a href="">特色服务</a>
+                            <a href="">7天退换货</a>
+                        </ol>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+    <div class="main">
+        <img src="img/item.png">
+    </div>
+    <div style="width: 1350px;margin: 0 auto;">
+        <p class="p1">全选<input type="checkbox" name="" id="all-sel"></p>
+
+        <div class="div">
+            <b>商品</b><b>单价</b> <b>数量</b><b>总价</b> <b>操作</b>
+        </div>
+        <div class="nulltu">
+            <p>您的购物车里什么都没有哦~<a href="home.html">去逛逛</a></p>
+        </div>
+        <ul class="list">
+            <!-- <li>
+            <img src="" alt="">
+            <p></p>
+            <p></p>
+            <div>
+                <input type="button" value="+"id="input1">
+                <input type="text" value="" id="input2">
+                <input type="button" value="-"id="input3">
+            </div>
+            <button>删除</button>
+        </li> -->
+        </ul>
+
+        <div class="buy">
+            <div>
+                数量：<span id="count-num"> 0</span>
+                <p>总价：<span id="count-price">0</span></p>
+            </div>
+            <input class="sub" type="submit" value="立即结算">
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+
+    <div class="footer" style="top: 300px;height: 662px;">
+
+        <div class="cont">
+            <div class="ftop">
+                <div>
+                    <span class="iconfont">&#xe600;</span>
+                    <a>
+                        <h5>品质保障</h5>
+                        <p>品质护航 购物无忧</p>
+                    </a>
+                </div>
+                <div>
+                    <span class="iconfont">&#xe600;</span>
+                    <a>
+                        <h5>品质保障</h5>
+                        <p>品质护航 购物无忧</p>
+                    </a>
+                </div>
+                <div>
+                    <span class="iconfont">&#xe600;</span>
+                    <a>
+                        <h5>品质保障</h5>
+                        <p>品质护航 购物无忧</p>
+                    </a>
+                </div>
+                <div>
+                    <span class="iconfont">&#xe600;</span>
+                    <a>
+                        <h5>品质保障</h5>
+                        <p>品质护航 购物无忧</p>
+                    </a>
+                </div>
+            </div>
+            <div class="fmidd">
+                <ul>
+                    <h4>购物指南</h4>
+                    <li>免费注册</li>
+                    <li>开通支付宝</li>
+                    <li>支付宝充值</li>
+                </ul>
+                <ul>
+                    <h4>购物指南</h4>
+                    <li>免费注册</li>
+                    <li>开通支付宝</li>
+                    <li>支付宝充值</li>
+                </ul>
+                <ul>
+                    <h4>购物指南</h4>
+                    <li>免费注册</li>
+                    <li>开通支付宝</li>
+                    <li>开通支付宝</li>
+                    <li>支付宝充值</li>
+                </ul>
+                <ul>
+                    <h4>购物指南</h4>
+                    <li>免费注册</li>
+                    <li>开通支付宝</li>
+                    <li>支付宝充值</li>
+                    <li>开通支付宝</li>
+                    <li>支付宝充值</li>
+                    <li>支付宝充值</li>
+                </ul>
+                <ul>
+                    <h4>手机天猫</h4>
+                    <img style="width: 50%;" src="img/f2.png">
+                </ul>
+            </div>
+            <div class="fbottm">
+                <ul>
+                    <p>关于天猫 帮助中心 开放平台 诚聘英才 联系我们 网站合作 法律声明 隐私权政策 知识产权 廉正举报 规则意见征集</p>
+                    <p>阿里巴巴集团 | 淘宝网 | 天猫 | 聚划算 | 全球速买网 | 阿里巴巴国际交易市场 | 1688 | 阿里妈妈 | 飞猪 | 阿里云计算 | Alios | 阿里通信 | 万网 | 高德 | UC | 友盟 | 虾米 | 钉钉 |支付宝 |阿里安全</p>
+                    <p style="color:#A4A49F">增值电信业务经营许可证： 浙B2-20110446 市场名称登记证：工商网市字3301004119号 出版物网络交易平台服务经营备案证： 新出发浙备字第001号</p>
+                    <b style="color:#A4A49F">互联网违法和不良信息举报电话：0571-81683755 blxxjb@alibaba-inc.com 互联网药品信息服务资质证书编号：浙-（经营性）-2017-0005  浙公网安备 33010002000120号</b>
+                    </br><b style="color:#A4A49F">医疗器械网络交易服务第三方平台备案：（浙）网械平台备字[2018]第00002号 互联网药品交易服务资格证书：国A20150001</b>
+                    </br><b style="color:#A4A49F">浙江省网络食品销售第三方平台提供者备案：浙网食A33010002 12318举报</b>
+                    </br><b style="color:#A4A49F">© 2003-2020 TMALL.COM 版权所有</b>
+                    <li style="display: flex;margin-top: 10px;">
+                        <img src="img/f1.gif" style="width: 30px;height: 30px;">
+                        <img src="img/ff.jpg" style="width: 80px;height: 30px;">
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/jquery1.11.js"></script>
+    <script src="js/cart.js"></script>
 </body>
 
 </html>

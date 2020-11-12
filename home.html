@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/home.css">
     <title>首页</title>
+    <link rel="stylesheet" href="css/ind.css">
+    <link rel="shortcut icon" href="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2137464088,2009884375&fm=26&gp=0.jpg">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="font/font_2186903_wbrix7s3pp8/iconfont.css">
@@ -26,10 +28,10 @@
         <div class="nav">
             <ul class="left">
                 <li>喵，欢迎来天猫</li>
-                <a href="log.html">
+                <a class="navlog" href="log.html">
                     <li>请登录</li>
                 </a>
-                <a href="reg.html">
+                <a class="navreg" href="reg.html">
                     <li>免费注册</li>
                 </a>
             </ul>
@@ -46,7 +48,7 @@
                 </li>
                 <li>
                     <span class="iconfont">&#xe60e;</span>
-                    <a href="">购物车</a>
+                    <a class="navcart">购物车</a>
                 </li>
                 <li class="li2">
                     <div>
@@ -240,7 +242,11 @@
                 <li><a href=""><span class="iconfont">&#xe7a3;</span>医药保健</a></li>
                 <li><a href=""><span class="iconfont">&#xe61e;</span>厨具/收纳/宠物</a></li>
                 <li><a href=""><span class="iconfont">&#xe604;</span>图书音像</a></li>
+                <div>
+                    <img src="img/zi.png">
+                </div>
             </ol>
+
             <div class="swiper">
                 <div class="swiper-container">
                     <div class="swiper-wrapper">
@@ -423,7 +429,8 @@
             </div>
         </div>
         <div class="produce">
-            <ul>
+
+            <!-- <ul>
                 <a><img src="//gw.alicdn.com/bao/uploaded/i1/90/O1CN01eHDd7h1CXGHGdO4VW_!!90-0-lubanu.jpg"></a>
                 <li style="width: 150px;">百草味 手撕面包1Kg</li>
                 <p style="width: 150px;">全麦整箱早餐饼干网</p>
@@ -453,6 +460,30 @@
                 <p style="width: 150px;">全麦整箱早餐饼干网</p>
                 <b>￥22.9</b>
             </ul>
+            <ul>
+                <a><img src="//gw.alicdn.com/bao/uploaded/i1/90/O1CN01eHDd7h1CXGHGdO4VW_!!90-0-lubanu.jpg"></a>
+                <li style="width: 150px;">百草味 手撕面包1Kg</li>
+                <p style="width: 150px;">全麦整箱早餐饼干网</p>
+                <b>￥22.9</b>
+            </ul>
+            <ul>
+                <a><img src="//gw.alicdn.com/bao/uploaded/i1/90/O1CN01eHDd7h1CXGHGdO4VW_!!90-0-lubanu.jpg"></a>
+                <li style="width: 150px;">百草味 手撕面包1Kg</li>
+                <p style="width: 150px;">全麦整箱早餐饼干网</p>
+                <b>￥22.9</b>
+            </ul>
+            <ul>
+                <a><img src="//gw.alicdn.com/bao/uploaded/i1/90/O1CN01eHDd7h1CXGHGdO4VW_!!90-0-lubanu.jpg"></a>
+                <li style="width: 150px;">百草味 手撕面包1Kg</li>
+                <p style="width: 150px;">全麦整箱早餐饼干网</p>
+                <b>￥22.9</b>
+            </ul>
+            <ul>
+                <a><img src="//gw.alicdn.com/bao/uploaded/i1/90/O1CN01eHDd7h1CXGHGdO4VW_!!90-0-lubanu.jpg"></a>
+                <li style="width: 150px;">百草味 手撕面包1Kg</li>
+                <p style="width: 150px;">全麦整箱早餐饼干网</p>
+                <b>￥22.9</b>
+            </ul> -->
         </div>
         <div class="quan">
 
@@ -546,7 +577,8 @@
             </div>
         </div>
     </div>
-
+    <script src="js/jquery1.11.js"></script>
+    <script src="js/home.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.js">
     </script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js">
@@ -574,6 +606,7 @@
             },
         });
     </script>
+
 
 </body>
 

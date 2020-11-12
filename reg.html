@@ -6,23 +6,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>注册</title>
     <link rel="shortcut icon" href="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2137464088,2009884375&fm=26&gp=0.jpg">
-
+    <link rel="stylesheet" href="css/ind.css">
+    <link rel="stylesheet" href="css/reg.css">
 </head>
 
 <body>
     <div class="boxmain">
+        <!-- tou -->
+        <ol class="header">
 
-        <div>
-            <ul>
-                <li><span>1</span>设置用户名</li>
-                <li><span>2</span>填写账号信息</li>
-                <li><span>3</span>设置支付方式</li>
-                <li><span>4</span>注册成功</li>
+            <li class="active" style="margin-left: 140px;"><span>1</span>设置用户名</li>
+            <li><span>2</span>填写账号信息</li>
+            <li><span>3</span>设置支付方式</li>
+            <li><span>4</span>注册成功</li>
 
-            </ul>
+        </ol>
+
+        <!-- tishi -->
+        <div class="inform">
+            <img src="img/tishi.png">
+            <button class="del">X</button>
+            <button class="agree">同意协议</button>
         </div>
-        <div></div>
+
+        <!-- bee -->
+        <div class="bee">
+            <img src="img/bee1.png">
+        </div>
+        <img class="imgbee" src="img/bee.svg">
+        <div class="btn">X</div>
+
+
+        <ul>
+            <li>
+                <h2>天猫帐号注册</h2>
+                <p>已有账号,<a href="log.html">去登录></a></p>
+            </li>
+            <li>账号：<input style="width:220px;height: 20px;margin-bottom: 20px;" type="text" id="zh"></li>
+            <li>密码：<input style="width:220px;height: 20px;margin-bottom: 20px;" type="password" id="pd"></li>
+            <li><input type="submit" value="注册" id="sub"></li>
+
+        </ul>
     </div>
+    <script src="js/jquery1.11.js"></script>
+    <script src="js/reg.js"></script>
 </body>
 
 </html>
